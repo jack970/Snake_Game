@@ -135,8 +135,9 @@ class App:
                     self.quit_()
                 else:
                     pass
-
-            self.screens.game_over_screen()
+            
+            score = len(self.game.snake.body) - 3
+            self.screens.game_over_screen(str(score))
             pygame.display.update()
             self.clock.tick(FPS)
 

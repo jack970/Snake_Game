@@ -17,3 +17,5 @@ SNAKE_RIGHT = Vector2(1, 0)
 PATH_FONT = "assets/Fonts/IHATCS__.TTF"
 PATH_GRAPHIC_APPLE = "assets/Graphics/apple.png"
 PATH_GRAPHIC_PAUSE = "assets/Graphics/pause.png"
+PATH_GRAPHIC_BACKGROUND = "assets/Graphics/background.jpg"
+PATH_GRAPHIC_LOGO = "assets/Graphics/snake-logo.png"
