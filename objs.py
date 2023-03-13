@@ -1,9 +1,11 @@
-import pygame
 import random
+
+import pygame
 from pygame.math import Vector2
 
 from colors import Colors
-from global_var import CELL_SIZE, CELL_NUMBER, SNAKE_RIGHT, SNAKE_DOWN, SNAKE_UP, SNAKE_LEFT
+from global_var import (CELL_NUMBER, CELL_SIZE, SNAKE_DOWN, SNAKE_LEFT,
+                        SNAKE_RIGHT, SNAKE_UP)
 
 
 class Fruit:
@@ -57,10 +59,6 @@ class Snake:
 
         self.update()
 
-    def screen_collision(self):
-        if self.body[0].x < 0:
-            print("colisao")
-
     def commands(self):
         pressed = pygame.key.get_pressed()
         if pressed[pygame.K_UP] and self.direction != SNAKE_DOWN:
@@ -76,6 +74,13 @@ class Snake:
         if self.body[0] == self.fruit.pos:
             self.fruit.randomized()
             self.add_block()
+
+    def screen_collision(self):
+        snake_x = self.body[0].x
+        snake_y = self.body[0].y
+        
+        if snake_x < 0 or snake_x > 19 or snake_y > 19 or snake_y < 0:
+            self.game_over()
 
     def self_eat(self):
         if self.body[0] in self.body[1:]:
