@@ -1,11 +1,12 @@
-import pygame
 import sys
 
-from widgets import Button, Text
-from colors import Colors
-from global_var import CELL_SIZE, CELL_NUMBER, DISPLAY_SIZE, FPS
+import pygame
+
+from globals.colors import Colors
+from globals.global_var import *
 from objs import Fruit, Snake
-from screens import Screens
+from screens.screens import Screens
+from screens.widgets import Button, Text
 
 
 class Game:
@@ -13,10 +14,10 @@ class Game:
         self.display = display
         self.main_app = main
 
-        self.game_font = pygame.font.Font('Fonts/IHATCS__.TTF', 30)
+        self.game_font = pygame.font.Font(PATH_FONT, 30)
         self.menu_pressed = False
 
-        self.pause_img = pygame.image.load('Graphics/pause.png')
+        self.pause_img = pygame.image.load(PATH_GRAPHIC_PAUSE)
         self.pause_img = pygame.transform.scale(self.pause_img, (CELL_SIZE, CELL_SIZE))
 
         self.fruit = Fruit(self.display)

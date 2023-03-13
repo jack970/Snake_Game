@@ -12,3 +12,8 @@ SNAKE_UP = Vector2(0, -1)
 SNAKE_DOWN = Vector2(0, 1)
 SNAKE_LEFT = Vector2(-1, 0)
 SNAKE_RIGHT = Vector2(1, 0)
+
+#PATH ASSETS
+PATH_FONT = "assets/Fonts/IHATCS__.TTF"
+PATH_GRAPHIC_APPLE = "assets/Graphics/apple.png"
+PATH_GRAPHIC_PAUSE = "assets/Graphics/pause.png"

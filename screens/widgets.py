@@ -1,10 +1,12 @@
 import pygame
-from colors import Colors
+
+from globals.colors import Colors
+from globals.global_var import PATH_FONT
 
 
 class Text:
     def __init__(self, display, text, pos, size=30, color=Colors.BLACK):
-        self.game_font = pygame.font.Font('Fonts/IHATCS__.TTF', size)
+        self.game_font = pygame.font.Font(PATH_FONT, size)
         self.display = display
         self.text = text
         self.color = color
@@ -33,7 +35,7 @@ class Button:
         self.bottom_rect = pygame.Rect(pos, (width, elevation))
         self.bottom_color = (75, 145, 50)
 
-        game_font = pygame.font.Font('Fonts/IHATCS__.TTF', 40)
+        game_font = pygame.font.Font(PATH_FONT, 40)
 
         self.text_surf = game_font.render(text, True, Colors.WHITE)
         self.text_rect = self.text_surf.get_rect(center=self.top_rect.center)

@@ -3,9 +3,8 @@ import random
 import pygame
 from pygame.math import Vector2
 
-from colors import Colors
-from global_var import (CELL_NUMBER, CELL_SIZE, SNAKE_DOWN, SNAKE_LEFT,
-                        SNAKE_RIGHT, SNAKE_UP)
+from globals.colors import Colors
+from globals.global_var import *
 
 
 class Fruit:
@@ -15,7 +14,7 @@ class Fruit:
         self.x = None
         self.display = display
 
-        self.apple_image = pygame.image.load('Graphics/apple.png')
+        self.apple_image = pygame.image.load(PATH_GRAPHIC_APPLE)
         self.apple_image = pygame.transform.scale(self.apple_image, (CELL_SIZE, CELL_SIZE))
         self.randomized()
 
@@ -79,7 +78,7 @@ class Snake:
         snake_x = self.body[0].x
         snake_y = self.body[0].y
         
-        if snake_x < 0 or snake_x > 19 or snake_y > 19 or snake_y < 0:
+        if snake_x < 0 or snake_x >= CELL_NUMBER or snake_y >= CELL_NUMBER or snake_y < 0:
             self.game_over()
 
     def self_eat(self):

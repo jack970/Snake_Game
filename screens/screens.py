@@ -1,6 +1,6 @@
-from global_var import CELL_SIZE, CELL_NUMBER
-from widgets import Button, Text
-from colors import Colors
+from globals.colors import Colors
+from globals.global_var import CELL_NUMBER, CELL_SIZE
+from screens.widgets import Button, Text
 
 
 class Screens:

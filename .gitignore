@@ -1,2 +1,4 @@
 # intellij configs
 .idea/
+env
+__pycache__
