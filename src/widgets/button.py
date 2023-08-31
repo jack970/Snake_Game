@@ -1,21 +1,7 @@
 import pygame
 
-from globals.colors import Colors
-from globals.global_var import PATH_FONT
-
-
-class Text:
-    def __init__(self, display, text, pos, size=30, color=Colors.BLACK):
-        self.game_font = pygame.font.Font(PATH_FONT, size)
-        self.display = display
-        self.text = text
-        self.color = color
-        self.pos = pos
-
-    def draw(self):
-        surface = self.game_font.render(self.text, True, self.color)
-        rect = surface.get_rect(center=self.pos)
-        self.display.blit(surface, rect)
+from src.config import Colors
+from src.config.global_var import PATH_FONT
 
 
 class Button:
@@ -28,7 +14,7 @@ class Button:
         self.original_y_pos = pos[1]
         self.target = target
 
-        #top rectangle
+        # top rectangle
         self.top_rect = pygame.Rect(pos, (width, height))
         self.top_color = Colors.BLUE
 
@@ -47,8 +33,10 @@ class Button:
         self.bottom_rect.midtop = self.top_rect.midtop
         self.bottom_rect.height = self.top_rect.height + self.dynamic_elevation
 
-        pygame.draw.rect(self.display, self.bottom_color, self.bottom_rect, border_radius= 12)
-        pygame.draw.rect(self.display, self.top_color, self.top_rect, border_radius= 12)
+        pygame.draw.rect(self.display, self.bottom_color,
+                         self.bottom_rect, border_radius=12)
+        pygame.draw.rect(self.display, self.top_color,
+                         self.top_rect, border_radius=12)
         self.display.blit(self.text_surf, self.text_rect)
         self.check_click()
 

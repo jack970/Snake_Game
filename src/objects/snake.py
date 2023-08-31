@@ -1,31 +1,7 @@
-import random
-
 import pygame
 from pygame.math import Vector2
-
-from globals.colors import Colors
-from globals.global_var import *
-
-
-class Fruit:
-    def __init__(self, display):
-        self.pos = None
-        self.y = None
-        self.x = None
-        self.display = display
-
-        self.apple_image = pygame.image.load(PATH_GRAPHIC_APPLE)
-        self.apple_image = pygame.transform.scale(self.apple_image, (CELL_SIZE, CELL_SIZE))
-        self.randomized()
-
-    def draw(self):
-        fruit_rect = pygame.Rect(int(self.pos.x * CELL_SIZE), int(self.pos.y * CELL_SIZE), CELL_SIZE, CELL_SIZE)
-        self.display.blit(self.apple_image, fruit_rect)
-
-    def randomized(self):
-        self.x = random.randint(0, CELL_NUMBER - 1)
-        self.y = random.randint(0, CELL_NUMBER - 1)
-        self.pos = Vector2(self.x, self.y)
+from src.config import Colors
+from src.config.global_var import *
 
 
 class Snake:
@@ -43,10 +19,12 @@ class Snake:
         for block in self.body:
             # create rectangle
             if self.body[0] == block:
-                snake_rect = pygame.Rect(int(block.x * CELL_SIZE), int(block.y * CELL_SIZE), CELL_SIZE, CELL_SIZE)
-                pygame.draw.rect(self.display, Colors.BLACK, snake_rect)    
+                snake_rect = pygame.Rect(
+                    int(block.x * CELL_SIZE), int(block.y * CELL_SIZE), CELL_SIZE, CELL_SIZE)
+                pygame.draw.rect(self.display, Colors.BLACK, snake_rect)
             else:
-                snake_rect = pygame.Rect(int(block.x * CELL_SIZE), int(block.y * CELL_SIZE), CELL_SIZE, CELL_SIZE)
+                snake_rect = pygame.Rect(
+                    int(block.x * CELL_SIZE), int(block.y * CELL_SIZE), CELL_SIZE, CELL_SIZE)
                 pygame.draw.rect(self.display, Colors.WHITE, snake_rect)
 
     def move(self):
@@ -81,7 +59,7 @@ class Snake:
     def screen_collision(self):
         snake_x = self.body[0].x
         snake_y = self.body[0].y
-        
+
         if snake_x < 0 or snake_x >= CELL_NUMBER or snake_y >= CELL_NUMBER or snake_y < 0:
             self.game_over()
 

@@ -1,7 +1,7 @@
 from pygame.math import Vector2
 
-FPS = 60
 
+FPS = 60
 # SCREEN SIZE
 CELL_SIZE = 40
 CELL_NUMBER = 20
