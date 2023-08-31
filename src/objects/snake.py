@@ -1,7 +1,6 @@
 import pygame
 from pygame.math import Vector2
-from src.config import Colors
-from src.config.global_var import *
+from src.config import *
 
 
 class Snake:
@@ -42,13 +41,21 @@ class Snake:
 
     def commands(self):
         pressed = pygame.key.get_pressed()
-        if pressed[pygame.K_UP] and self.direction != SNAKE_DOWN:
+
+        k_up, k_down, k_left, k_right = pressed[KEY_UP], pressed[KEY_DOWN], pressed[KEY_LEFT], pressed[KEY_RIGHT]
+
+        k_w, k_s, k_a, k_d = pressed[KEY_W], pressed[KEY_S], pressed[KEY_A], pressed[KEY_D]
+
+        if (k_up or k_w) and self.direction != SNAKE_DOWN:
             self.direction = SNAKE_UP
-        elif pressed[pygame.K_DOWN] and self.direction != SNAKE_UP:
+
+        elif (k_down or k_s) and self.direction != SNAKE_UP:
             self.direction = SNAKE_DOWN
-        elif pressed[pygame.K_LEFT] and self.direction != SNAKE_RIGHT:
+
+        elif (k_left or k_a) and self.direction != SNAKE_RIGHT:
             self.direction = SNAKE_LEFT
-        elif pressed[pygame.K_RIGHT] and self.direction != SNAKE_LEFT:
+
+        elif (k_right or k_d) and self.direction != SNAKE_LEFT:
             self.direction = SNAKE_RIGHT
 
     def eat(self):

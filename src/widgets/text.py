@@ -1,7 +1,6 @@
 import pygame
 
-from ..config import Colors
-from ..config.global_var import PATH_FONT
+from src.config import Colors, PATH_FONT
 
 
 class Text:

@@ -3,7 +3,7 @@ import random
 import pygame
 from pygame.math import Vector2
 
-from src.config.global_var import *
+from src.config import CELL_SIZE, CELL_NUMBER, PATH_GRAPHIC_APPLE
 
 
 class Fruit:

@@ -1,6 +1,6 @@
-from ..config import Colors
-from ..config.global_var import *
-from ..widgets import Button, Text
+from src.config import Colors
+from src.config.global_var import *
+from src.widgets import Button, Text
 import pygame
 
 

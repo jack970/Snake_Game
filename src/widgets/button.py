@@ -1,7 +1,6 @@
 import pygame
 
-from src.config import Colors
-from src.config.global_var import PATH_FONT
+from src.config import Colors, PATH_FONT
 
 
 class Button:
