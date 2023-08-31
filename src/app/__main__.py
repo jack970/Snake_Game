@@ -14,7 +14,9 @@ class App:
         self.running = False
         self.paused = False
 
+        pygame.display.set_caption(GAME_TITLE)
         self.display = pygame.display.set_mode(DISPLAY_SIZE)
+
         self.clock = pygame.time.Clock()
 
         self.SCREEN_UPDATE = pygame.USEREVENT

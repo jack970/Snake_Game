@@ -9,6 +9,7 @@ def resourcePath(relative_path):
     return os.path.join(base_path, "assets", relative_path)
 
 
+GAME_TITLE = "Jogo da Cobrinha"
 FPS = 60
 # SCREEN SIZE
 CELL_SIZE = 40

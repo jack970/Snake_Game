@@ -1,9 +1,7 @@
-import random
-
-import pygame
-from pygame.math import Vector2
-
 from src.config import CELL_SIZE, CELL_NUMBER, PATH_GRAPHIC_APPLE
+from pygame.math import Vector2
+import random
+import pygame
 
 
 class Fruit:
